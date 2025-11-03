@@ -135,7 +135,7 @@ public class BookJpaEntity implements Serializable {
     }
 
     public void setSynopisisEn(String synopisisEn) {
-        this.synopisisEn = synopisisEn;
+        this.synopsisEn = synopisisEn;
     }
 
     public BigDecimal getBasePrice() {
