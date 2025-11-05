@@ -6,7 +6,6 @@ import es.cesguiro.domain.model.Page;
 import es.cesguiro.domain.repository.BookRepository;
 import es.cesguiro.domain.repository.entity.BookEntity;
 import es.cesguiro.persistance.dao.jpa.BookDaoJpa;
-import es.cesguiro.persistance.repository.mapper.BookMapper;
 
 public class BookRepositoryImpl implements BookRepository {
     private final BookDaoJpa bookDaoJpa;

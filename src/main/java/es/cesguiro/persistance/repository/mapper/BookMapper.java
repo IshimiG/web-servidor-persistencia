@@ -23,17 +23,16 @@ public class BookMapper {
         return new BookJpaEntity(
             bookEntity.id(),
             bookEntity.isbn(),
-            bookEntity.titleEs(),
-            bookEntity.titleEn(),
-            bookEntity.synopsisEs(),
-            bookEntity.synopsisEn(),
-            bookEntity.basePrice(),
-            bookEntity.discountPercentage(),
-            bookEntity.discountPercentage(),
-            bookEntity.cover(),
-            bookEntity.publicationDate(),
+            bookEntity.titleEs(), 
+            bookEntity.titleEn(), 
+            bookEntity.synopsisEs(), 
+            bookEntity.synopsisEn(), 
+            bookEntity.basePrice(), 
+            bookEntity.discountPercentage(), 
+            bookEntity.cover(), 
+            bookEntity.publicationDate(), 
             bookEntity.authors()
-        );
+            );
     }
 
     public BookEntity fromBookJpaEntityToBookEntity(BookJpaEntity bookJpaEntity) {

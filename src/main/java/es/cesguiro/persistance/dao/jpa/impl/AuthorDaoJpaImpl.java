@@ -31,28 +31,30 @@ public class AuthorDaoJpaImpl implements AuthorDaoJpa{
     }
 
     @Override
-    public List findAll(int page, int size) {
+    public List<AuthorDaoJpa> findAll(int page, int size) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Object findById(Long id) {
+    public AuthorDaoJpa findById(Long id) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Object insert(Object entity) {
+    public AuthorDaoJpa insert(AuthorDaoJpa entity) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Object update(Object entity) {
+    public AuthorDaoJpa update(AuthorDaoJpa entity) {
         // TODO Auto-generated method stub
         return null;
     }
+    
+
 
     
 

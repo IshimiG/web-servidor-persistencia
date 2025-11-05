@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import es.cesguiro.persistance.dao.jpa.entity.BookJpaEntity;
 
-public interface BookDaoJpa extends GenericDaoJpa {
+public interface BookDaoJpa extends GenericDaoJpa<BookDaoJpa> {
     Optional<BookJpaEntity> findByIsbn(String isbn);
     void deleteByIsbn(String isbn);
 

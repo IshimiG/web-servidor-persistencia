@@ -36,28 +36,29 @@ public class BookDaoJpaImpl implements BookDaoJpa {
     }
 
     @Override
-    public List findAll(int page, int size) {
+    public List<BookDaoJpa> findAll(int page, int size) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Object findById(Long id) {
+    public BookDaoJpa findById(Long id) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Object insert(Object entity) {
+    public BookDaoJpa insert(BookDaoJpa entity) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Object update(Object entity) {
+    public BookDaoJpa update(BookDaoJpa entity) {
         // TODO Auto-generated method stub
         return null;
     }
+
     
 
 }
