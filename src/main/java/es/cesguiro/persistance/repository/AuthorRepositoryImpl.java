@@ -16,12 +16,14 @@ public class AuthorRepositoryImpl implements AuthorRepository {
 
     @Override
     public Optional<AuthorEntity> findById(Long id) {
-        return authorDaoJpa.findById(id).map(AuthorMapper.getInstance()::fromAuthorJpaEntityToAuthorEntity);
+        return authorDaoJpa.findById(id).map(AuthorMapper.INSTANCE::fromAuthorJpaEntityToAuthorEntity);
     }
 
     @Override
     public AuthorEntity save(AuthorEntity authorEntity) {
-        return null;
+        return AuthorMapper.INSTANCE.fromAuthorJpaEntityToAuthorEntity(
+                authorDaoJpa.insert(AuthorMapper.INSTANCE.fromAuthorEntityToAuthorJpaEntity(authorEntity))
+        );
     }
 
 

@@ -1,39 +1,17 @@
 package es.cesguiro.persistance.repository.mapper;
 
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
 import es.cesguiro.domain.repository.entity.PublisherEntity;
 import es.cesguiro.persistance.dao.jpa.entity.PublisherJpaEntity;
 
-public class PublisherMapper {
-    private static PublisherMapper instace;
+@Mapper
+public interface PublisherMapper {
 
-    private PublisherMapper() {}
+    PublisherMapper INSTANCE = Mappers.getMapper(PublisherMapper.class);
 
-    public static PublisherMapper getInstance() {
-        if (instace == null) {
-            instace = new PublisherMapper();
-        }
-        return instace;
-    }
+    PublisherJpaEntity publisherEntityToPublisherJpaEntity(PublisherEntity publisherEntity);
 
-    public PublisherJpaEntity fromPublisherEntityToPublisherJpaEntity(PublisherEntity publisherEntity) {
-        if (publisherEntity == null) {
-            return null;
-        }
-        return new PublisherJpaEntity(
-            publisherEntity.id(),
-            publisherEntity.name(),
-            publisherEntity.slug()
-        );
-    }
-
-    public PublisherEntity fromPublisherJpaToPublisherEntity(PublisherJpaEntity publisherJpaEntity) {
-        if (publisherJpaEntity == null) {
-            return null;
-        }
-        return new PublisherEntity(
-            publisherJpaEntity.getId(), 
-            publisherJpaEntity.getName(), 
-            publisherJpaEntity.getSlug()
-        );
-    }
+    PublisherEntity publisherJpaEntityToPublisherEntity(PublisherJpaEntity publisherJpaEntity);
 }

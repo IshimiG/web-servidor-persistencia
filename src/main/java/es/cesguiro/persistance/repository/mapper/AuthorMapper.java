@@ -1,48 +1,15 @@
 package es.cesguiro.persistance.repository.mapper;
 
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
 import es.cesguiro.domain.repository.entity.AuthorEntity;
 import es.cesguiro.persistance.dao.jpa.entity.AuthorJpaEntity;
+@Mapper
+public interface AuthorMapper {
+    AuthorMapper INSTANCE = Mappers.getMapper(AuthorMapper.class);
 
-public class AuthorMapper {
-    private static AuthorMapper instance;
-
-    private AuthorMapper() {}
-
-    public static AuthorMapper getInstance() {
-        if (instance == null) {
-            instance = new AuthorMapper();
-        }
-        return instance;
-    }
-
-    public AuthorJpaEntity fromAuthroEntityToAuthorJpaEntity(AuthorEntity authorEntity) {
-        if (authorEntity == null) {
-            return null;
-        }
-        return new AuthorJpaEntity(
-                authorEntity.id(),
-                authorEntity.name(),
-                authorEntity.nationality(),
-                authorEntity.biographyEs(),
-                authorEntity.biographyEn(),
-                authorEntity.birthYear(),
-                authorEntity.deathYear(),
-                authorEntity.slug()
-        );
-    }
-
-    public AuthorEntity fromAuthorJpaEntityToAuthorEntity(AuthorJpaEntity authorJpaEntity) {
-        if (authorJpaEntity == null) {
-            return null;
-        }
-        return new AuthorEntity(authorJpaEntity.getId(),
-                authorJpaEntity.getName(), 
-                authorJpaEntity.getNationality(), 
-                authorJpaEntity.getBiographyEs(), 
-                authorJpaEntity.getBiographyEn(), 
-                authorJpaEntity.getBirthYear(), 
-                authorJpaEntity.getDeathYear(), 
-                authorJpaEntity.getSlug());
-    }
+    AuthorJpaEntity fromAuthorEntityToAuthorJpaEntity(AuthorEntity authorEntity);
+    AuthorEntity fromAuthorJpaEntityToAuthorEntity(AuthorJpaEntity authorJpaEntity);
 
 }
